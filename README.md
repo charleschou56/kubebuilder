@@ -26,7 +26,22 @@ $ kubebuilder create api --group cnat --version v1alpha1 --kind At
 $ kubectl create ns cnat && kubectl config set-context $(kubectl config current-context) --namespace=cnat
 ```
 
-## install CRD
+## Install CRD
 ```bash
 $ make install
+```
+
+## Run controller
+```bash
+$ make run
+```
+
+## Create CRD
+```bash
+$ kubectl apply -f config/crd/bases/cnat.programming-kubernetes.info_ats.yaml
+```
+
+## Create resource object
+```bash
+kubectl apply -f config/samples/cnat_v1alpha1_at.yaml
 ```
